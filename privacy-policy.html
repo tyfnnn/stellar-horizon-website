@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Horizon - Privacy Policy</title>
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #5c6bc0;
+            --accent: #ff4081;
+            --text: #f5f5f5;
+            --dark: #121212;
+            --card-bg: rgba(30, 30, 50, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(to bottom, #0b0d2a, #15102a);
+            overflow: hidden;
+        }
+        
+        .stars:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 2px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 1px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 2px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+        }
+        
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8));
+            position: relative;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            padding: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            margin-left: 0.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .page-title {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .page-title h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #5c6bc0, #ff4081);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .page-title p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .privacy-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 4rem;
+        }
+        
+        .privacy-content h2 {
+            color: var(--accent);
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+        }
+        
+        .privacy-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .privacy-content h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .privacy-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .privacy-content ul, .privacy-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .privacy-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .privacy-content a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .privacy-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .privacy-date {
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .back-to-top:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+        
+        .footer {
+            padding: 3rem 1rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section {
+            min-width: 200px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-title p {
+                font-size: 1rem;
+            }
+            
+            .privacy-content {
+                padding: 1.5rem;
+            }
+            
+            .privacy-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .privacy-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Stars Background -->
+    <div class="stars"></div>
+    
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <span>STELLAR HORIZON</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#demo">Demo</a>
+                <a href="index.html#download">Download</a>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Privacy Policy Content -->
+    <div class="page-title">
+        <h1>Privacy Policy</h1>
+        <p>How we handle your information</p>
+    </div>
+    
+    <div class="privacy-content">
+        <p class="privacy-date">Last Updated: March 17, 2025</p>
+        
+        <h2>1. INTRODUCTION</h2>
+        <p>Welcome to Stellar Horizon. We are committed to protecting your privacy and personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Stellar Horizon mobile application and related services.</p>
+        <p>Please read this Privacy Policy carefully. By accessing or using the Service, you acknowledge that you have read, understood, and agree to be bound by all the terms of this Privacy Policy. If you do not agree with our policies and practices, please do not use our Service.</p>
+        
+        <h2>2. INFORMATION WE COLLECT</h2>
+        
+        <h3>2.1 Personal Information</h3>
+        <p>We may collect the following types of personal information:</p>
+        <ul>
+            <li><strong>Account Information</strong>: When you create an account, we collect your email address, name, and password.</li>
+            <li><strong>Profile Information</strong>: Information you provide in your user profile, such as display name, gender, birth date, and profile images.</li>
+            <li><strong>User Content</strong>: Information you provide when using the Service, including saved favorites, comments, and user preferences.</li>
+            <li><strong>Device Information</strong>: We collect information about your device, including IP address, device type, operating system, and unique device identifiers.</li>
+            <li><strong>Usage Data</strong>: Information about how you use the Service, including the features you use, the time, frequency, and duration of your activities.</li>
+        </ul>
+        
+        <h3>2.2 Information Collected Through Automatic Data Collection Technologies</h3>
+        <p>When you use our Service, we may use cookies, pixel tags, local storage, and other technologies to automatically collect:</p>
+        <ul>
+            <li><strong>Log Data</strong>: This includes your IP address, browser type, operating system, the pages you visit, the time and date of your visit, and other statistics.</li>
+            <li><strong>Location Information</strong>: With your permission, we may collect and process information about your approximate or precise location.</li>
+        </ul>
+        
+        <h2>3. HOW WE USE YOUR INFORMATION</h2>
+        <p>We may use the information we collect for various purposes, including to:</p>
+        <ul>
+            <li>Provide, maintain, and improve our Service.</li>
+            <li>Create and maintain your account.</li>
+            <li>Process transactions.</li>
+            <li>Send you technical notices, updates, security alerts, and support messages.</li>
+            <li>Communicate with you about products, services, offers, promotions, and events, and provide other news or information about us and our partners.</li>
+            <li>Monitor and analyze trends, usage, and activities in connection with our Service.</li>
+            <li>Detect, prevent, and address technical issues, fraud, or illegal activity.</li>
+            <li>Personalize your experience and deliver content and features relevant to your interests.</li>
+        </ul>
+        
+        <h2>4. SHARING OF YOUR INFORMATION</h2>
+        <p>We may share your information in the following circumstances:</p>
+        <ul>
+            <li><strong>With Service Providers</strong>: We may share your information with third-party vendors, service providers, contractors, or agents who perform services for us or on our behalf, such as data analysis, payment processing, and customer service.</li>
+            <li><strong>For Business Transfers</strong>: If we are involved in a merger, acquisition, or sale of all or a portion of our assets, your information may be transferred as part of that transaction.</li>
+            <li><strong>For Legal Purposes</strong>: We may disclose your information if required to do so by law or in response to valid requests by public authorities (e.g., a court or government agency).</li>
+            <li><strong>With Your Consent</strong>: We may share your information with third parties when you have given us your consent to do so.</li>
+        </ul>
+        
+        <h2>5. DATA TRANSFERS</h2>
+        <p>Your information may be transferred to, stored, and processed in countries other than the country in which you are resident. These countries may have data protection laws that are different from those of your country.</p>
+        <p>For users in the European Economic Area (EEA), we ensure that any transfer of your personal data to countries outside the EEA is done in accordance with data protection laws, typically through standard contractual clauses approved by the European Commission.</p>
+        
+        <h2>6. DATA RETENTION</h2>
+        <p>We will retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+        <p>When we no longer need personal information, we will delete or anonymize it. If this is not possible, we will securely store your personal information and isolate it from any further use until deletion is possible.</p>
+        
+        <h2>7. YOUR RIGHTS AND CHOICES</h2>
+        <p>Depending on your location, you may have certain rights regarding your personal information:</p>
+        
+        <h3>7.1 For Users in the European Economic Area (GDPR Rights)</h3>
+        <p>Under the General Data Protection Regulation (GDPR), you have the following rights:</p>
+        <ul>
+            <li><strong>Right to Access</strong>: You can request a copy of the personal information we hold about you.</li>
+            <li><strong>Right to Rectification</strong>: You can request that we correct inaccurate or incomplete information.</li>
+            <li><strong>Right to Erasure</strong>: You can request the deletion of your personal information in certain circumstances.</li>
+            <li><strong>Right to Restrict Processing</strong>: You can request that we restrict the processing of your information in certain circumstances.</li>
+            <li><strong>Right to Data Portability</strong>: You can request to receive your personal information in a structured, commonly used, and machine-readable format.</li>
+            <li><strong>Right to Object</strong>: You can object to our processing of your personal information in certain circumstances.</li>
+            <li><strong>Right to Withdraw Consent</strong>: You can withdraw your consent at any time where we are relying on consent to process your personal information.</li>
+        </ul>
+        <p>To exercise these rights, please contact us using the information provided in the "Contact Us" section below.</p>
+        
+        <h3>7.2 For California Residents (CCPA/CPRA Rights)</h3>
+        <p>Under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), California residents have the following rights:</p>
+        <ul>
+            <li><strong>Right to Know</strong>: You can request information about the categories of personal information we collect, the purposes for which we use them, the categories of sources from which we collect information, and the categories of third parties with whom we share information.</li>
+            <li><strong>Right to Access</strong>: You can request a copy of the specific personal information we have collected about you.</li>
+            <li><strong>Right to Delete</strong>: You can request the deletion of your personal information, subject to certain exceptions.</li>
+            <li><strong>Right to Correct</strong>: You can request that we correct inaccurate personal information.</li>
+            <li><strong>Right to Opt-out of Sales and Sharing</strong>: You can request to opt out of the sale or sharing of your personal information for cross-context behavioral advertising purposes.</li>
+            <li><strong>Right to Limit Use and Disclosure of Sensitive Personal Information</strong>: You can request to limit the use and disclosure of sensitive personal information.</li>
+            <li><strong>Right to Non-Discrimination</strong>: We will not discriminate against you for exercising any of these rights.</li>
+        </ul>
+        <p>To exercise these rights, please contact us using the information provided in the "Contact Us" section below.</p>
+        
+        <h3>7.3 Account Settings</h3>
+        <p>You can review and change your personal information by logging into the Service and visiting your account settings page.</p>
+        
+        <h3>7.4 Communication Preferences</h3>
+        <p>You can opt out of receiving promotional emails from us by following the instructions in those emails. If you opt out, we may still send you non-promotional emails, such as those about your account or our ongoing business relations.</p>
+        
+        <h2>8. DATA SECURITY</h2>
+        <p>We have implemented appropriate technical and organizational measures to protect the security of your personal information. However, no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.</p>
+        
+        <h2>9. CHILDREN'S PRIVACY</h2>
+        <p>Our Service is not intended for children under the age of 16, and we do not knowingly collect personal information from children under 16. If we learn we have collected or received personal information from a child under 16 without verification of parental consent, we will delete that information.</p>
+        
+        <h2>10. THIRD-PARTY SERVICES</h2>
+        <p>Our Service may contain links to other websites or services that are not operated by us. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+        
+        <h2>11. FIREBASE USAGE</h2>
+        <p>Our app uses Firebase, a service provided by Google, for various functionalities:</p>
+        <ul>
+            <li><strong>Firebase Authentication</strong>: To manage user authentication.</li>
+            <li><strong>Firebase Firestore</strong>: To store user data, settings, and preferences.</li>
+            <li><strong>Firebase Storage</strong>: To store user-uploaded images.</li>
+        </ul>
+        <p>The information collected by Firebase is subject to Google's Privacy Policy, which can be found at <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.</p>
+        
+        <h2>12. CHANGES TO THIS PRIVACY POLICY</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top. You are advised to review this Privacy Policy periodically for any changes.</p>
+        <p>Your continued use of the Service after we post any modifications to the Privacy Policy will constitute your acknowledgment of the modifications and your consent to abide and be bound by the modified Privacy Policy.</p>
+        
+        <h2>13. CONTACT US</h2>
+        <p>If you have any questions about this Privacy Policy or wish to exercise any of your rights, please contact us at:</p>
+        <p><strong>Email</strong>: contact.visualstories@gmail.com<br>
+        <strong>Postal Address</strong>: Visual Stories, Hans-Reyhing-Str.12, 72762 Reutlingen, Germany</p>
+        
+        <h2>14. COMPLAINT RESOLUTION</h2>
+        <p>If you have a complaint about our use of your information, we would prefer you to contact us directly. However, you can also contact your local data protection authority if you prefer:</p>
+        <ul>
+            <li>For EU/EEA users: <a href="https://edpb.europa.eu/about-edpb/board/members_en" target="_blank">List of EU Data Protection Authorities</a></li>
+            <li>For UK users: <a href="https://ico.org.uk/" target="_blank">Information Commissioner's Office</a></li>
+            <li>For US users: <a href="https://www.ftc.gov/" target="_blank">Federal Trade Commission</a></li>
+        </ul>
+    </div>
+    
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 12L12 5L19 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Stellar Horizon</h3>
+                <p>Explore the cosmos from your pocket with our award-winning space exploration app.</p>
+                <div class="social-links">
+                    <a href="#">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23 3.00005C22.0424 3.67552 20.9821 4.19216 19.86 4.53005C19.2577 3.83756 18.4573 3.34674 17.567 3.12397C16.6767 2.90121 15.7395 2.95724 14.8821 3.2845C14.0247 3.61175 13.2884 4.19445 12.773 4.95376C12.2575 5.71308 11.9877 6.61238 12 7.53005V8.53005C10.2426 8.57561 8.50127 8.18586 6.93101 7.39549C5.36074 6.60513 4.01032 5.43868 3 4.00005C3 4.00005 -1 13 8 17C5.94053 18.398 3.48716 19.099 1 19C10 24 21 19 21 7.50005C20.9991 7.2215 20.9723 6.94364 20.92 6.67005C21.9406 5.66354 22.6608 4.39276 23 3.00005Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 9H2V21H6V9Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 7.99987V7.99987C16.9 7.99987 17.5 7.39987 17.5 6.49987C17.5 5.59987 16.9 4.99987 16 4.99987C15.1 4.99987 14.5 5.59987 14.5 6.49987C14.5 7.39987 15.1 7.99987 16 7.99987Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17.5001 19.9999H6.50007C4.00007 19.9999 2.00007 17.9999 2.00007 15.4999V8.49994C2.00007 5.99994 4.00007 3.99994 6.50007 3.99994H17.5001C20.0001 3.99994 22.0001 5.99994 22.0001 8.49994V15.4999C22.0001 17.9999 20.0001 19.9999 17.5001 19.9999Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#demo">Demo</a></li>
+                    <li><a href="index.html#download">Download</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Stellar Horizon App. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
